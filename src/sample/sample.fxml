@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <VBox>
+         <children>
+            <MenuBar VBox.vgrow="ALWAYS">
+              <menus>
+                <Menu fx:id="help" mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem fx:id="about" mnemonicParsing="false" onAction="#showAbout" text="About" />
+                        <MenuItem fx:id="author" mnemonicParsing="false" onAction="#showAuthor" text="Author" />
+                  </items>
+                </Menu>
+              </menus>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </MenuBar>
+            <GridPane hgap="20.0" vgap="10.0" VBox.vgrow="ALWAYS">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="TOP_CENTER" spacing="70.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label fx:id="key1Label" text="Key 1">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="key1" prefWidth="250.0" promptText="Key 1">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label fx:id="key2Label" text="Key 2">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="key2" prefWidth="250.0" promptText="Key 2">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox GridPane.rowIndex="1">
+                     <children>
+                        <Label fx:id="path1Label" text="Path to decrypted text file">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="pathToDec" promptText="Path to decrypted file">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox GridPane.rowIndex="2">
+                     <children>
+                        <Label fx:id="text1Label" text="Decrypted text">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="decTxt" promptText="Decrypted text without punctuation marks" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
+                  <VBox GridPane.rowIndex="4">
+                     <children>
+                        <Label fx:id="path2Label" text="Path to encrypted text file">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="pathToEnc" promptText="Path to encrypted file">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox GridPane.rowIndex="5">
+                     <children>
+                        <Label fx:id="text2Label" text="Encrypted text">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="encTxt" promptText="Encrypted Text" wrapText="true">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                  </VBox>
+                  <CheckBox fx:id="useFileDec" mnemonicParsing="false" onAction="#decFileAction" text="Use file" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="18.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <Button fx:id="encryptButton" mnemonicParsing="false" onAction="#encrypt" text="Encrypt" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <CheckBox fx:id="useFileEnc" mnemonicParsing="false" onAction="#encFileAction" text="Use file" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets top="18.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <Button fx:id="decryptButton" mnemonicParsing="false" onAction="#decrypt" text="Decrypt" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="40.0" right="40.0" top="20.0" />
+               </VBox.margin>
+            </GridPane>
+            <VBox>
+               <children>
+                  <RadioButton fx:id="english" mnemonicParsing="false" onAction="#lang" selected="true" text="English">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="Language" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="polish" mnemonicParsing="false" onAction="#lang" text="Polski" toggleGroup="$Language">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="40.0" right="40.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+      <Pane fx:id="savedPane" layoutX="242.0" layoutY="444.0" prefHeight="55.0" prefWidth="212.0" style="-fx-background-color: lightgray;" visible="false">
+         <children>
+            <Label fx:id="savedL" layoutX="66.0" layoutY="18.0" text="Saved to file!">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="errorPane" layoutX="242.0" layoutY="443.0" prefHeight="55.0" prefWidth="212.0" style="-fx-background-color: #545863;" visible="false">
+         <children>
+            <Label fx:id="errorL" layoutX="52.0" layoutY="18.0" text="An error occured!" textFill="#ff4646">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</Pane>
