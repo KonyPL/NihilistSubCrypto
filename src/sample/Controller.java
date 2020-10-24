@@ -90,7 +90,7 @@ public class Controller {
         if(useFileDec.isSelected())
         {
             try {
-                decryptedText = Files.readString(Paths.get(pathToDec.getText()));
+                decryptedText = new String(Files.readAllBytes(Paths.get(pathToDec.getText())));
             } catch (IOException e) {
                 System.out.println("An error occurred.");
                 e.printStackTrace();
@@ -170,7 +170,7 @@ public class Controller {
         if(useFileEnc.isSelected())
         {
             try {
-                encryptedText = Files.readString(Paths.get(pathToEnc.getText()));
+                encryptedText = new String(Files.readAllBytes(Paths.get(pathToEnc.getText())));
             } catch (IOException e) {
                 System.out.println("An error occurred.");
                 e.printStackTrace();
