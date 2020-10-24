@@ -102,6 +102,8 @@ public class Cypher {
 
         if ( lastRow != 0)
             heightOfEncryptedMatrix++;
+        else
+            lastRow = -1;
         encryptedMatrix = new ArrayList<ArrayList<Integer>>(heightOfEncryptedMatrix);
         for (int i = 0; i < heightOfEncryptedMatrix; i++) {
             ArrayList<Integer> arr = new ArrayList<>(widthOfEncryptedMatrix);
@@ -161,6 +163,8 @@ public class Cypher {
 
         if ( lastRow != 0)
             heightOfEncryptedMatrix++;
+        else
+            lastRow = -1;
         encryptedMatrix = new ArrayList<ArrayList<Integer>>(heightOfEncryptedMatrix);
         for (int i = 0; i < heightOfEncryptedMatrix; i++) {
             ArrayList<Integer> arr = new ArrayList<>(widthOfEncryptedMatrix);
